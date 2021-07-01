@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title>dd</title>
-      <link href="/2021/070111051.html"/>
-      <url>/2021/070111051.html</url>
+      <title>pycharm 配置git工具</title>
+      <link href="/2021/07011.html"/>
+      <url>/2021/07011.html</url>
       
-        <content type="html"><![CDATA[<p><img src="/2021/dd%5Css.jpg" alt="aa"></p>]]></content>
+        <content type="html"><![CDATA[<p><strong>配置git工具</strong></p><p>首先确保安装git服务</p><p>打开pycharm</p><p><img src="http://pic.ihcnb.cn/iHcnb/5631641e003ed.png" alt="clipboard.png"></p><p><img src="http://pic.ihcnb.cn/iHcnb/1582db1661bf8.png" alt="clipboard.png"></p><p>点击<a href="https://github.com/settings/tokens/new%E8%BF%99%E4%B8%AA%E8%B6%85%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84token%E3%80%82">https://github.com/settings/tokens/new这个超链接，就是创建你的token。</a></p><p><img src="http://pic.ihcnb.cn/iHcnb/d27d3ee9133c3.png" alt="clipboard.png"></p><p>全选，然后复制令牌，粘贴在pycharm</p><p><img src="http://pic.ihcnb.cn/iHcnb/53999a444daab.png" alt="clipboard.png"></p><p><strong>操作</strong></p><p>项目从本地库上传到远程库</p><p><img src="http://pic.ihcnb.cn/iHcnb/002dbc91c5e5d.png" alt="clipboard.png"></p>]]></content>
       
       
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git配置 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -18,10 +30,10 @@
     
     <entry>
       <title>pycharm git多人协作开发</title>
-      <link href="/2021/070161892.html"/>
-      <url>/2021/070161892.html</url>
+      <link href="/2021/07012.html"/>
+      <url>/2021/07012.html</url>
       
-        <content type="html"><![CDATA[<p><img src="/2021/ceshi%5Csclipboard.png" alt="sclipboard"></p>]]></content>
+        <content type="html"><![CDATA[<p>第一步：</p><p>复制合作者项目名</p><p><img src="http://pic.ihcnb.cn/iHcnb/5bb0aafb244f4.png" alt="clipboard.png"></p><p>在你这边搜索</p><p><img src="http://pic.ihcnb.cn/iHcnb/8db34b37a1084.png" alt="clipboard.png"></p><p>打开pycharm</p><p><img src="http://pic.ihcnb.cn/iHcnb/fd0c2dadcd904.png" alt="clipboard.png"></p><p>复制地址输入地址</p><p><img src="http://pic.ihcnb.cn/iHcnb/2de97e3e54a25.png" alt="clipboard.png"></p><p><img src="http://pic.ihcnb.cn/iHcnb/fb45ebea98971.png" alt="clipboard.png"></p><p>此时多人协作已完成文件克隆</p><p>次分支有所改动上传后需要在分支页面确认</p><p><img src="http://pic.ihcnb.cn/iHcnb/a01cbc2626ad6.png" alt="clipboard.png"></p><p>确认后主分支也需要确认，确认后方可修改主分支</p>]]></content>
       
       
       <categories>
