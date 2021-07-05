@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Python创建一个学生字典并可以查询其中信息</title>
+      <link href="/2021/07051.html"/>
+      <url>/2021/07051.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python创建一个学生字典并可以查询其中信息"><a href="#Python创建一个学生字典并可以查询其中信息" class="headerlink" title="Python创建一个学生字典并可以查询其中信息"></a>Python创建一个学生字典并可以查询其中信息</h1><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 定义一个字典，存放单个学生信息</span>stuInfo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>stuInfo<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> namestuInfo<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span> <span class="token operator">=</span> stuIdstuInfo<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> age<span class="token comment" spellcheck="true"># 单个学生信息放入列表</span>students<span class="token punctuation">.</span>append<span class="token punctuation">(</span>stuInfo<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"添加成功！"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#查询单个学生的信息</span><span class="token keyword">global</span> studentssearchID<span class="token operator">=</span>input<span class="token punctuation">(</span><span class="token string">"请输入你要查询学生的学号:"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#验证是否有此学号</span>i <span class="token operator">=</span> <span class="token number">0</span>leap <span class="token operator">=</span> <span class="token number">0</span><span class="token keyword">for</span> temp <span class="token keyword">in</span> students<span class="token punctuation">:</span>    <span class="token keyword">if</span> temp<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span> <span class="token operator">==</span> searchID<span class="token punctuation">:</span>        leap <span class="token operator">=</span> <span class="token number">1</span>        <span class="token keyword">break</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>    <span class="token keyword">if</span> leap <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"没有此学生学号，查询失败！"</span><span class="token punctuation">)</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"找到此学生，信息如下："</span><span class="token punctuation">)</span>        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"学号：%s\n姓名：%s\n年龄：%s\n"</span><span class="token operator">%</span><span class="token punctuation">(</span>temp<span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>temp<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>temp<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pycharm 配置git工具</title>
       <link href="/2021/07011.html"/>
       <url>/2021/07011.html</url>
