@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux必知文件夹和常用操作, ss">
+    <meta name="keywords" content="ss">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux必知文件夹和常用操作 | CodKx&#39;Bg</title>
+    <title>CodKx&#39;Bg</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/bitbug_favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux必知文件夹和常用操作</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -433,25 +433,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-category">
-                                服务器
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -460,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    560
                 </div>
                 
 
@@ -501,49 +488,96 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="9Linux目录结构"><a href="#9Linux目录结构" class="headerlink" title="9Linux目录结构"></a>9Linux目录结构</h4><p>​    var:存放经常变化的文件</p>
-<p>​    home：普通用户目录</p>
-<p>​    etc：存放配置文件目录</p>
-<p>​    root：特权用户目录</p>
-<p>​    opt：大型软件存放目录</p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre><code>命令     条件/参数    对象/文件/目录
-</code></pre>
-<p>修改linux支持中文的命令</p>
-<pre><code>export LC_ALL=zh_CN.UTF-8
-</code></pre>
-<h5 id="对文件的增删改查"><a href="#对文件的增删改查" class="headerlink" title="对文件的增删改查"></a>对文件的增删改查</h5><h6 id="查"><a href="#查" class="headerlink" title="查"></a>查</h6><pre><code>1.ls
-2.ls . 查看当前目录所有文件
-3.ls .. 查看上一级目录所有文件
-4.pwd 查看当前路径
+                <hr>
+<p>abbrlink: 1<br>title: 算法入门<br>tags: 算法入门<br>categories: 算法</p>
+<hr>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>一个计算过程，解决问题的方法</p>
+<p>“程序=数据结构+算法”</p>
+<h5 id="时间复杂度-小结"><a href="#时间复杂度-小结" class="headerlink" title="时间复杂度-小结"></a>时间复杂度-小结</h5><ul>
+<li>时间复杂度用来估计算法运行时间的一个式子（单位）。</li>
+<li>一般来说，时间复杂度高的算法比复杂度低的算法慢</li>
+<li>常见的时间复杂度（按效率排序）<ul>
+<li>O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^2logn)&lt;O(n^3)</li>
+</ul>
+</li>
+<li>复杂问题的时间复杂度<ul>
+<li>O(n!) O(2^n) O(n^n)</li>
+</ul>
+</li>
+</ul>
+<h4 id="如何简单快速地判断算法复杂度"><a href="#如何简单快速地判断算法复杂度" class="headerlink" title="如何简单快速地判断算法复杂度"></a>如何简单快速地判断算法复杂度</h4><ul>
+<li><p>快速判断算法复杂度（适用绝大多数简单情况）：\</p>
+<ul>
+<li>确定问题规模n</li>
+<li>循环减半过程——logn</li>
+<li>k层关于n的循环——n^k</li>
+</ul>
+</li>
+<li><p>复杂情况：根据算法执行过程判断</p>
+</li>
+</ul>
+<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><ul>
+<li>用来评估算法内存占用大小的式子</li>
+<li>空间复杂度的表示方式与时间复杂度完全一样<ul>
+<li>算法使用几个变量：O(1)</li>
+<li>算法使用了长度为n的一堆列表：O(n)</li>
+<li>算法使用了m行n列的二维列表：O(mn)   </li>
+</ul>
+</li>
+<li>”空间换时间“：宁可占用多的空间来提升时间</li>
+</ul>
+<p><img src="http://pic.ihcnb.cn/iHcnb/258f323facada.png" alt="1625539849122.png"></p>
+<h4 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h4><p><img src="http://pic.ihcnb.cn/iHcnb/696c369b60ff9.png" alt="1625626707071.png"></p>
+<ul>
+<li><p>顺序查找（线性查找）：从第一个元素往下找，直到找到或者搜索到列表最后一个元素为止</p>
+</li>
+<li><p>时间复杂度：O(n)</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">linear_search</span><span class="token punctuation">(</span>data_set<span class="token punctuation">,</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
 
-查看文件夹所有内容（包括隐藏）： ls -a 文件夹
+    :param data_set: 列表
+    :param value: 要查的数据
+    :return:循环找到需要的数据，返回下标
+    '''</span>
+    <span class="token keyword">for</span> ind<span class="token punctuation">,</span>v <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>data_set<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> v <span class="token operator">==</span> value<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> ind
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> None
 </code></pre>
-<h6 id="改-路径"><a href="#改-路径" class="headerlink" title="改(路径)"></a>改(路径)</h6><pre><code>cd 
-</code></pre>
-<h6 id="删"><a href="#删" class="headerlink" title="删"></a>删</h6><pre><code>rm 操作对象  删除文件
-rm -r 文件夹名  #递归删除文件夹，以及内部
-rm -f 文件名 强制删除文件，不需要提醒
+</li>
+<li><p>二分查找</p>
+</li>
+<li><p>时间复杂度：O(logn) </p>
+<ul>
+<li>比O(n)也就是线性查找快得多</li>
+</ul>
+</li>
+<li><p><img src="http://pic.ihcnb.cn/iHcnb/0e1893fc35e35.png" alt="1625625711331.png"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#二分查找</span>
+<span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
 
-</code></pre>
-<h6 id="增"><a href="#增" class="headerlink" title="增"></a>增</h6><pre><code>mkdir 新建文件夹名称
+    :param li: 列表
+    :param val: 需要查找的数
+    :return:
+    '''</span>
+    left <span class="token operator">=</span> <span class="token number">0</span>
+    right <span class="token operator">=</span> len<span class="token punctuation">(</span>li<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token number">1</span>
 
-创建普通文件、隐藏文件
-touch 文件名 、 touch  .文件名
+    <span class="token keyword">while</span> left<span class="token operator">&lt;=</span>right<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 候选区有值</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>left<span class="token operator">+</span>right<span class="token punctuation">)</span> <span class="token operator">//</span><span class="token number">2</span>  <span class="token comment" spellcheck="true"># 找到候选区中间值</span>
+        <span class="token keyword">if</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> val<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 如果直接找到要找的值，返回</span>
+            <span class="token keyword">return</span> mid
+        <span class="token keyword">elif</span> li<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span>val<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 查找值在mid左侧</span>
+            right <span class="token operator">=</span> mid<span class="token number">-1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># li[mid]&lt;val 带查找的值在mid右侧</span>
+            left <span class="token operator">=</span> mid<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> None
 </code></pre>
-<p>绝对路径：从根目录开始</p>
-<p>相对路径：非从根目录开始</p>
-<p>远程连接命令（xshell）：</p>
-<pre><code>ssh root@ip
-</code></pre>
-<p>输出命令所在绝对路径</p>
-<pre><code>[root@localhost ~]# which python  
-/usr/bin/python
-</code></pre>
-<p>python3添加环境变量</p>
-<p><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210326164529669.png" alt="image-20210326164529669"></p>
-<h5 id="linux系统全局环境变量"><a href="#linux系统全局环境变量" class="headerlink" title="linux系统全局环境变量"></a>linux系统全局环境变量</h5><pre><code>etc/profile
-vim /etc/profile
-</code></pre>
+<h6 id="python内置列表查找函数：index-运用线性查找，因为二分查找一大特点列表必须是有序列表"><a href="#python内置列表查找函数：index-运用线性查找，因为二分查找一大特点列表必须是有序列表" class="headerlink" title="*python内置列表查找函数：index()运用线性查找，因为二分查找一大特点列表必须是有序列表"></a>*python内置列表查找函数：index()运用线性查找，因为二分查找一大特点列表必须是有序列表</h6></li>
+</ul>
 
                 
             </div>
@@ -570,7 +604,7 @@ vim /etc/profile
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://skxgood03.github.io/2021/063017.html">https://skxgood03.github.io/2021/063017.html</a>
+                    <a href="https://skxgood03.github.io/2021/07060.html">https://skxgood03.github.io/2021/07060.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -607,11 +641,7 @@ vim /etc/profile
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1057,66 +1087,18 @@ vim /etc/profile
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06301.html">
+                <a href="/2021/07060.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.png" class="responsive-img" alt="Django REST framework">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Django REST framework</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/python/" class="post-category">
-                                    python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/DRF/">
-                        <span class="chip bg-color">DRF</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/062910.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="crm项目开发">
-                        
-                        <span class="card-title">crm项目开发</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1127,7 +1109,45 @@ vim /etc/profile
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Kexuan Shi
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07051.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.png" class="responsive-img" alt="Python创建一个学生字典并可以查询其中信息">
+                        
+                        <span class="card-title">Python创建一个学生字典并可以查询其中信息</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-05
                             </span>
                         <span class="publish-author">
                             
@@ -1144,8 +1164,8 @@ vim /etc/profile
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CRM/">
-                        <span class="chip bg-color">CRM</span>
+                    <a href="/tags/python%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">python基础</span>
                     </a>
                     
                 </div>
