@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="序列化器, ss">
+    <meta name="keywords" content="列表排序, ss">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>序列化器 | CodKx&#39;Bg</title>
+    <title>列表排序 | CodKx&#39;Bg</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/bitbug_favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">序列化器</h1>
+                    <h1 class="description center-align post-title">列表排序</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/DRF/">
-                                <span class="chip bg-color">DRF</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                <span class="chip bg-color">算法入门</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -460,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    281
                 </div>
                 
 
@@ -501,330 +501,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="序列化器："><a href="#序列化器：" class="headerlink" title="序列化器："></a>序列化器：</h4><p>作用：<img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210416101325153.png" alt="image-20210416101325153"></p>
-<h5 id="序列化："><a href="#序列化：" class="headerlink" title="序列化："></a>序列化：</h5><p>​    数据之间的相互转换，数据结构类型转换为其他格式（字典，JSON，XML等），将Django的模型类对象转换为JSON字符串</p>
-<h5 id="反序列化："><a href="#反序列化：" class="headerlink" title="反序列化："></a>反序列化：</h5><p>​    反之，将其他格式转换为程序整的数据，例如将JSON字符串转换为Django中的模型类对象</p>
-<h5 id="1-1定义："><a href="#1-1定义：" class="headerlink" title="1.1定义："></a>1.1定义：</h5><p>能够参考模型序列化器：</p>
-<pre><code>"""
-定义序列化器
-１．定义类，继承自Serializer
-２．和模型类，字段，类型，选项一样
-    read_only=True　只读
-    label　字段说明
-
-"""
-</code></pre>
-<p>代码(book/serializers.py)：</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1.定义序列化器</span>
-<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'id'</span><span class="token punctuation">,</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    btitle <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
-    bpub_date <span class="token operator">=</span> serializers<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
-    bread <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
-    bcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
-    is_delete <span class="token operator">=</span> serializers<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>代码(book/model.py)：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
-
-<span class="token comment" spellcheck="true">#定义图书模型类</span>
-<span class="token keyword">class</span> <span class="token class-name">BookInfo</span><span class="token punctuation">(</span>models<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    btitle <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
-    bpub_date <span class="token operator">=</span> models<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>verbose_name<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
-    bread <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
-    bcomment <span class="token operator">=</span> models<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
-    is_delete <span class="token operator">=</span> models<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
-        db_table <span class="token operator">=</span> <span class="token string">'tb_books'</span> <span class="token comment" spellcheck="true">#　知名数据库名称</span>
-        verbose_name <span class="token operator">=</span> <span class="token string">'图书'</span> <span class="token comment" spellcheck="true">#ａｄｍｉｎ站点中显示的名称</span>
-        verbose_name_plural <span class="token operator">=</span> verbose_name <span class="token comment" spellcheck="true">#显示的复数名称</span>
-
-    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''定义每个数据对象的显示信息'''</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>btitle
-
-</code></pre>
-<h5 id="1-2序列化器，序列化单个对象"><a href="#1-2序列化器，序列化单个对象" class="headerlink" title="1.2序列化器，序列化单个对象"></a>1.2序列化器，序列化单个对象</h5><p>​    操作流程(book/view.py)</p>
-<pre class=" language-python"><code class="language-python">
-<span class="token triple-quoted-string string">'''===========1.序列化器，序列化单个书籍对象==========='''</span>
-<span class="token keyword">from</span> <span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
-<span class="token keyword">from</span> <span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
-
-<span class="token comment" spellcheck="true">#1.获取书籍对象</span>
-book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">#2.创建序列化器，instance，表示要序列化的对象</span>
-serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>book<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">#3．转换数据</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">'''
-结果：
-{'id': 1, 'btitle': '西游记', 'bpub_date': '2021-04-21', 'bread': 30, 'bcomment': 39, 'is_delete': False}
-'''</span>
-</code></pre>
-<p>注意点：<br>    BookInfoSerializer(instance=book)</p>
-<p>​        instance=book：表示将book序列化</p>
-<p>​    serializer.data：获取序列化的结果</p>
-<h5 id="序列化器，序列化列表"><a href="#序列化器，序列化列表" class="headerlink" title="序列化器，序列化列表"></a>序列化器，序列化列表</h5><p>​    操作流程(book/view.py)</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#1.获取书籍对象</span>
-books <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">#2.创建序列化器，instance，表示要序列化的对象,many=True　表示序列化多个对象</span>
-serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>books<span class="token punctuation">,</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">#3．转换数据</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>serializer<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">'''
-结果：
-[OrderedDict([('id', 1), ('btitle', '西游记'), ('bpub_date', '2021-04-21'), ('bread', 30), ('bcomment', 39), ('is_delete', False)]),
- OrderedDict([('id', 2), ('btitle', '水浒传'), ('bpub_date', '2021-04-08'), ('bread', 40), ('bcomment', 30), ('is_delete', False)])]
-
-'''</span>
-</code></pre>
-<h5 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h5><p>​    BookInfoSerializer(instance=book,many=True)</p>
-<p>​        many=True：表示序列化多个对象</p>
-<h5 id="英雄序列化器"><a href="#英雄序列化器" class="headerlink" title="英雄序列化器"></a>英雄序列化器</h5><p>​    操作流程(book/serializers.py):</p>
-<p>定义英雄序列化器：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">HeroInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""英雄数据序列化器"""</span>
-    GENDER_CHOICES <span class="token operator">=</span> <span class="token punctuation">(</span>
-        <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'male'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'female'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span>
-    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'ID'</span><span class="token punctuation">,</span> read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    hname <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'名字'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-    hgender <span class="token operator">=</span> serializers<span class="token punctuation">.</span>ChoiceField<span class="token punctuation">(</span>choices<span class="token operator">=</span>GENDER_CHOICES<span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'性别'</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-    hcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'描述信息'</span><span class="token punctuation">,</span> max_length<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span> required<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> allow_null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-
-
-</code></pre>
-<p>定义关联字段：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">HeroInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    
-<span class="token comment" spellcheck="true">#1,添加外键,主键表示 必须提供`queryset` 选项, 或者设置 read_only=`True`.显示外键</span>
-    <span class="token comment" spellcheck="true"># hbook = serializers.PrimaryKeyRelatedField(queryset=BookInfo.objects.all())</span>
-    <span class="token comment" spellcheck="true"># hbook = serializers.PrimaryKeyRelatedField(read_only=True)</span>
-    <span class="token comment" spellcheck="true"># 结果：{'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': 1}</span>
-
-    <span class="token comment" spellcheck="true">#2,添加外键, 来自于关联模型类, __str__的返回值　外键名称</span>
-    <span class="token comment" spellcheck="true"># hbook = serializers.StringRelatedField(read_only=True)</span>
-    <span class="token comment" spellcheck="true"># 结果：{'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': '西游记'}</span>
-
-    <span class="token comment" spellcheck="true">#3,添加外键,关联另外一个序列化器　返回外键关联的所有信息</span>
-    hbook <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># 结果：{'id': 1, 'hname': '吴承恩', 'hgender': 1, 'hcomment': '孙悟空', 'hbook': OrderedDict([('id', 1), ('btitle', '西游记'), ('bpub_date', '2021-04-21'), ('bread', 30), ('bcomment', 39), ('is_delete', False)])}</span>
-</code></pre>
-<h5 id="书籍序列化器，关联many"><a href="#书籍序列化器，关联many" class="headerlink" title="书籍序列化器，关联many"></a>书籍序列化器，关联many</h5><p>​    目的：能够序列化书籍的时候，输出关联作者信息</p>
-<p>​    操作流程（book/serializers.py）：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    id <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'id'</span><span class="token punctuation">,</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    btitle <span class="token operator">=</span> serializers<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'名称'</span><span class="token punctuation">)</span>
-    bpub_date <span class="token operator">=</span> serializers<span class="token punctuation">.</span>DateField<span class="token punctuation">(</span>label<span class="token operator">=</span><span class="token string">'发布日期'</span><span class="token punctuation">)</span>
-    bread <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'阅读量'</span><span class="token punctuation">)</span>
-    bcomment <span class="token operator">=</span> serializers<span class="token punctuation">.</span>IntegerField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'评论数'</span><span class="token punctuation">)</span>
-    is_delete <span class="token operator">=</span> serializers<span class="token punctuation">.</span>BooleanField<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">'逻辑删除'</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true">#1.用书籍查作者：关联英雄主键，many=True,一方中，序列化多方需要加上　(获取ｉｄ)</span>
-    <span class="token comment" spellcheck="true"># heroinfo_set = serializers.PrimaryKeyRelatedField(read_only=True,many=True)</span>
-    <span class="token comment" spellcheck="true">#２．关联英雄,__str__返回值（获取ｎａｍｅ）</span>
-    heroinfo_set <span class="token operator">=</span> serializers<span class="token punctuation">.</span>StringRelatedField<span class="token punctuation">(</span>read_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>many<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-</code></pre>
-<p>​    注意：</p>
-<p>​            many=True,一方中，序列化多方需要加上</p>
-<p>==============================================</p>
-<h4 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h4><p>1.1数据类型验证</p>
-<ul>
-<li><p>目的：理解序列化器中的字段，对数据进行校验的过程</p>
+                <h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
+<li><p>列表相邻的两个数，如果前面比后面大，交换这两个数</p>
 </li>
-<li><p>常见的字段类型：</p>
-<ol>
-<li><p>CharField：字段串</p>
+<li><p>一趟排序完成后，无序列表区减一，有序列表区加一</p>
 </li>
-<li><p>······</p>
+<li><p>时间复杂度：O(n^2)</p>
 </li>
-</ol>
-</li>
-</ul>
-<p>1.2反序列化选项验证</p>
-<p><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210419093003168.png" alt="image-20210419093003168"></p>
-<p>判断max_length等等</p>
-<ul>
-<li>requred：默认是True，必须要传递，除非设置了 default | false | read_only</li>
-<li>read_only： 只读，不进行反序列化</li>
-</ul>
-<p>1.3反序列化单个字段验证 ：</p>
-<p>​    目的：定义单个字段校验</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-    
-    
-    
-    <span class="token comment" spellcheck="true"># 反序列化单个字段校验 validate多字段校验，加上字段名是单个字段校验</span>
-    <span class="token keyword">def</span> <span class="token function">validate_btitle</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
-         <span class="token comment" spellcheck="true"># 校验ｖａｌｕｅ的内容</span>
-         <span class="token keyword">if</span> <span class="token string">'金瓶'</span> <span class="token operator">not</span> <span class="token keyword">in</span> value<span class="token punctuation">:</span>
-             <span class="token keyword">raise</span>  serializers<span class="token punctuation">.</span>ValidationError<span class="token punctuation">(</span><span class="token string">'书籍不包含金瓶'</span><span class="token punctuation">)</span>
-         <span class="token keyword">return</span> value
-</code></pre>
-<ul>
-<li>注意点：<ul>
-<li>固定格式：<br>def validate_字段名称(self, value):<ul>
-<li>pass</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>1.4 反序列化，多个字段validate验证</p>
-<ul>
-<li><p>目的：</p>
-</li>
-<li><p>代码展示：</p>
-</li>
-<li><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#多字段校验</span>
-    <span class="token keyword">def</span> <span class="token function">validate</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> attrs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :param attrs: 外界传过来的，book_dict
-        :return: 
-        """</span>
-        <span class="token comment" spellcheck="true">#1．获取阅读量，评论量</span>
-        bread <span class="token operator">=</span> attrs<span class="token punctuation">[</span><span class="token string">'bread'</span><span class="token punctuation">]</span>
-        bcomment <span class="token operator">=</span> attrs<span class="token punctuation">[</span><span class="token string">'bcomment'</span><span class="token punctuation">]</span>
-        <span class="token comment" spellcheck="true">#2.判断</span>
-        <span class="token keyword">if</span> bcomment <span class="token operator">></span> bread<span class="token punctuation">:</span>
-            <span class="token keyword">raise</span> serializers<span class="token punctuation">.</span>ValidationError<span class="token punctuation">(</span><span class="token string">'评论量大于阅读量'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#返回：</span>
-        <span class="token keyword">return</span> attrs
-</code></pre>
-</li>
-<li><p>注意：</p>
-<ul>
-<li>校验不通过的时候一定要抛出异常</li>
-</ul>
-</li>
-</ul>
-<p>1.5反序列化，自定义验证方法</p>
-<p>1.6 反序列化，create保存数据</p>
-<ul>
-<li><p>视图层：</p>
-<ul>
-<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> book<span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
-<span class="token comment" spellcheck="true"># 1.准备数据</span>
-book_dict <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"btitle"</span><span class="token punctuation">:</span><span class="token string">"金瓶x-插画版"</span><span class="token punctuation">,</span>
-    <span class="token string">"bpub_date"</span><span class="token punctuation">:</span><span class="token string">"2019-01-01"</span><span class="token punctuation">,</span>
-    <span class="token string">"bread"</span><span class="token punctuation">:</span><span class="token number">17</span><span class="token punctuation">,</span>
-    <span class="token string">"bcomment"</span><span class="token punctuation">:</span><span class="token number">25</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">#2,创建序列化器，校验</span>
-serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>data<span class="token operator">=</span>book_dict<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># serializer.is_valid()</span>
-
-serializer<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span>raise_exception<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#校验不通过，直接报错</span>
-<span class="token comment" spellcheck="true"># ３．输出</span>
-serializer<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubble_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        exchange <span class="token operator">=</span> <span class="token boolean">False</span>  <span class="token comment" spellcheck="true">#优化：减少排序次数</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                exchange <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 每一次拍完序打印</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> exchange<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>  <span class="token comment" spellcheck="true"># 如果已经排序完成，后面都是有序，则不用继续比对，继续排列 如 [9,6,1,2,3,4,5],只比对前三个，减少时间提高效率</span>
+li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">87</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+bubble_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
+<h5 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h5><ul>
+<li><p>遍历记录最小的数放在第一位</p>
 </li>
-<li><p>序列化器代码</p>
-<ul>
-<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
+<li><p>再一趟排序记录列表区最小的数，放在第二个位置</p>
+</li>
+<li><p>算法关键点：有序区，无序区最小数的位置</p>
+</li>
+<li><p>时间复杂度：O(n^2)</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">select_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        min_loc <span class="token operator">=</span> i
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                min_loc <span class="token operator">=</span> j
+        li<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>min_loc<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true">#1.定义序列化器</span>
-<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
-<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-
-    <span class="token comment" spellcheck="true">#实现create方法</span>
-    <span class="token keyword">def</span> <span class="token function">create</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> validated_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-        :param validated_data: 校验成功子后的数据
-        :return:
-        '''</span>
-        <span class="token comment" spellcheck="true">#1.创建ｂｏｏｋ对象，入库</span>
-        book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>create<span class="token punctuation">(</span><span class="token operator">**</span>validated_data<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#2.返回</span>
-        <span class="token keyword">return</span> book
+li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+select_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
 </code></pre>
 </li>
+<li></li>
 </ul>
-</li>
-<li><p>注意点：</p>
-<ul>
-<li>当使用序列化器调用sava方法的时候，执行的就是序列化器中的create方法</li>
-</ul>
-</li>
-</ul>
-<p>1.7 反序列化，update更新数据</p>
-<ul>
-<li><p>视图层：</p>
-<ul>
-<li><pre class=" language-python"><code class="language-python"><span class="token triple-quoted-string string">'''===========３.序列化器，反序列化,update更新数据==========='''</span><span class="token string">''</span>
-
-<span class="token keyword">from</span> book<span class="token punctuation">.</span>serializers <span class="token keyword">import</span> BookInfoSerializer
-<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
-<span class="token comment" spellcheck="true"># 1.准备数据</span>
-book_dict <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"btitle"</span><span class="token punctuation">:</span><span class="token string">"水浒传"</span><span class="token punctuation">,</span>
-    <span class="token string">"bpub_date"</span><span class="token punctuation">:</span><span class="token string">"2019-01-01"</span><span class="token punctuation">,</span>
-    <span class="token string">"bread"</span><span class="token punctuation">:</span><span class="token number">50</span><span class="token punctuation">,</span>
-    <span class="token string">"bcomment"</span><span class="token punctuation">:</span><span class="token number">25</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">#要更新的数据</span>
-book <span class="token operator">=</span> BookInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">#2,创建序列化器，校验</span>
-serializer <span class="token operator">=</span> BookInfoSerializer<span class="token punctuation">(</span>instance<span class="token operator">=</span>book<span class="token punctuation">,</span>data<span class="token operator">=</span>book_dict<span class="token punctuation">)</span>
-
-
-serializer<span class="token punctuation">.</span>is_valid<span class="token punctuation">(</span>raise_exception<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#校验不通过，直接报错</span>
-<span class="token comment" spellcheck="true"># ３．入库</span>
-serializer<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>序列化器代码:</p>
-<ul>
-<li><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rest_framework <span class="token keyword">import</span> serializers
-
-<span class="token comment" spellcheck="true">#1.定义序列化器</span>
-<span class="token keyword">from</span> book<span class="token punctuation">.</span>models <span class="token keyword">import</span> BookInfo
-<span class="token keyword">class</span> <span class="token class-name">BookInfoSerializer</span><span class="token punctuation">(</span>serializers<span class="token punctuation">.</span>Serializer<span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-
-   <span class="token comment" spellcheck="true">#实现update方法：</span>
-    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> instance<span class="token punctuation">,</span> validated_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">'''
-
-        :param instance: 外界传过来的值
-        :param validated_data:　验成功子后的数据
-        :return:
-        '''</span>
-
-        <span class="token comment" spellcheck="true"># １.更新数据</span>
-        instance<span class="token punctuation">.</span>btitle <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'btitle'</span><span class="token punctuation">]</span>
-        instance<span class="token punctuation">.</span>bpub_date <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bpub_date'</span><span class="token punctuation">]</span>
-        instance<span class="token punctuation">.</span>bread <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bread'</span><span class="token punctuation">]</span>
-        instance<span class="token punctuation">.</span>bcomment <span class="token operator">=</span> validated_data<span class="token punctuation">[</span><span class="token string">'bcomment'</span><span class="token punctuation">]</span>
-
-        <span class="token comment" spellcheck="true"># 2.入库</span>
-        instance<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">return</span> instance
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p><em><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210419163100154.png" alt="image-20210419163100154"></em>*</p>
 
                 
             </div>
@@ -851,7 +573,7 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://skxgood03.github.io/2021/06303.html">https://skxgood03.github.io/2021/06303.html</a>
+                    <a href="https://skxgood03.github.io/2021/07081.html">https://skxgood03.github.io/2021/07081.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -889,8 +611,8 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/DRF/">
-                                    <span class="chip bg-color">DRF</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                                    <span class="chip bg-color">算法入门</span>
                                 </a>
                             
                         </div>
@@ -1338,17 +1060,18 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06306.html">
+                <a href="/2021/07081.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="列表排序">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">列表排序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1358,26 +1081,27 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DRF/">
-                        <span class="chip bg-color">DRF</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">算法入门</span>
                     </a>
                     
                 </div>
@@ -1391,13 +1115,13 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06302.html">
+                <a href="/2021/070610717.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="restful风格">
+                        <img src="/medias/featureimages/18.png" class="responsive-img" alt="算法入门">
                         
-                        <span class="card-title">restful风格</span>
+                        <span class="card-title">算法入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1408,14 +1132,14 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -1425,8 +1149,8 @@ serializer<span class="token punctuation">.</span>save<span class="token punctua
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DRF/">
-                        <span class="chip bg-color">DRF</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">算法入门</span>
                     </a>
                     
                 </div>
