@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="rbac组件, ss">
+    <meta name="keywords" content="模型类序列化器, ss">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>rbac组件 | CodKx&#39;Bg</title>
+    <title>模型类序列化器 | CodKx&#39;Bg</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/bitbug_favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">rbac组件</h1>
+                    <h1 class="description center-align post-title">模型类序列化器</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CRM/">
-                                <span class="chip bg-color">CRM</span>
+                            <a href="/tags/DRF/">
+                                <span class="chip bg-color">DRF</span>
                             </a>
                         
                     </div>
@@ -460,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-30
+                    2021-07-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    771
+                    983
                 </div>
                 
 
@@ -501,224 +501,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="权限表设计："><a href="#权限表设计：" class="headerlink" title="权限表设计："></a>权限表设计：</h4><ul>
-<li><p>基于角色的权限控制</p>
-<ul>
-<li><p>用户表</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th align="center">id</th>
-<th align="center">name</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>角色表</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th align="center">id</th>
-<th align="center">title</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>用户角色关系表</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th align="center">id</th>
-<th align="center">name_id</th>
-<th align="center">title_id</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>权限表</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th align="center">id</th>
-<th align="center">url</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>角色权限关系表</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th>id</th>
-<th>title_id</th>
-<th>url_id</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="使用自定义rbac权限组件"><a href="#使用自定义rbac权限组件" class="headerlink" title="使用自定义rbac权限组件"></a>使用自定义rbac权限组件</h4><ol>
-<li><p>拷贝rbac组件</p>
-</li>
-<li><p>清空migration目录</p>
-</li>
-<li><p>在setting注册rbac</p>
-<pre class=" language-python"><code class="language-python"><span class="token string">'rbac'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">#django 2.0以上</span>
-</code></pre>
-</li>
-<li><p>数据库迁移录入信息</p>
-</li>
-<li><p>创建超级管理，添加权限信息(组件admin.py已经定制化)</p>
-</li>
-<li><p>用户登录后做权限和菜单的初始化  <code>init_permission</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> web <span class="token keyword">import</span> models
-<span class="token keyword">from</span> rbac <span class="token keyword">import</span> models
-<span class="token comment" spellcheck="true">#调用自定义权限和菜单组件</span>
-<span class="token keyword">from</span> rbac<span class="token punctuation">.</span>service<span class="token punctuation">.</span>init_permission <span class="token keyword">import</span> init_permission
-
-<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">'''
-    登录代码，成功后调用init_permission传入request、登录用户信息(obj)
-    '''</span>
-    
-    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'GET'</span><span class="token punctuation">:</span>
-       <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span><span class="token string">'login.html'</span><span class="token punctuation">)</span>
-    name<span class="token operator">=</span>request<span class="token punctuation">.</span>POST<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span>
-    pwd<span class="token operator">=</span>request<span class="token punctuation">.</span>POST<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'pwd'</span><span class="token punctuation">)</span>
-    obj <span class="token operator">=</span> models<span class="token punctuation">.</span>UserInfo<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>name<span class="token operator">=</span>name<span class="token punctuation">,</span>password<span class="token operator">=</span>pwd<span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token operator">not</span> obj<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span><span class="token string">'login.html'</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">'msg'</span><span class="token punctuation">:</span><span class="token string">'用户名密码错误'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-    request<span class="token punctuation">.</span>session<span class="token punctuation">[</span><span class="token string">'user_info'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span>obj<span class="token punctuation">.</span>id<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">:</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
-    
-    init_permission<span class="token punctuation">(</span>request<span class="token punctuation">,</span>obj<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> redirect<span class="token punctuation">(</span><span class="token string">'/customer/list/'</span><span class="token punctuation">)</span>
-</code></pre>
-</li>
-<li><p>应用中间件，进行权限校验</p>
-<pre class=" language-python"><code class="language-python"><span class="token string">'rbac.middleware.rbac.RbacMiddleware'</span>
-</code></pre>
-</li>
-<li><p>设置setting配置文件</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#############权限相关#######################</span>
-PERMISSION_SESSION_KEY <span class="token operator">=</span> <span class="token string">'permissions_list'</span>
-MENU_SESSION_KEY <span class="token operator">=</span> <span class="token string">'menu_list'</span>
-<span class="token comment" spellcheck="true">#白名单</span>
-VALID_URL <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'^/login/$'</span><span class="token punctuation">,</span>
-    <span class="token string">'^/admin/.*'</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>
-</code></pre>
-</li>
-<li><p>显示动态菜单（引入静态文件）、在菜单栏  <code>+{% menu  request %}</code>、最上方导入<code>{% load rbac %}</code></p>
-</li>
-<li><p>粒度控制到按钮</p>
-<ol>
-<li><pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true">#加在需要控制的按钮上</span>
-    <span class="token punctuation">{</span><span class="token operator">%</span> <span class="token keyword">if</span> request<span class="token operator">|</span>has_permission<span class="token punctuation">:</span><span class="token string">'add'</span> <span class="token operator">%</span><span class="token punctuation">}</span>
-               <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"{% url 'add' %}"</span><span class="token operator">></span>增加<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-           <span class="token punctuation">{</span><span class="token operator">%</span> endif <span class="token operator">%</span><span class="token punctuation">}</span>
-</code></pre>
-</li>
-<li></li>
-</ol>
+                <h4 id="高并发的解决方案"><a href="#高并发的解决方案" class="headerlink" title="高并发的解决方案"></a>高并发的解决方案</h4><h5 id="应用和静态分离"><a href="#应用和静态分离" class="headerlink" title="应用和静态分离"></a>应用和静态分离</h5><ol>
+<li><p>应用和静态分离，将应用和静态文件放在不同的服务器上面，因为静态文件没有状态分离比较简单通过不同的域名让服务器直接访问资源服务器而不需要在访问应用的服务器</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/WgIJfO"><img src="https://z3.ax1x.com/2021/07/25/WgIJfO.png" alt="WgIJfO.png"></a></p>
 </li>
 </ol>
-<h4 id="阶段问题"><a href="#阶段问题" class="headerlink" title="阶段问题"></a>阶段问题</h4><ul>
-<li>权限几张表？5张 (用户，角色，权限，用户角色，权限角色)</li>
-<li>简述权限流程<ul>
-<li>粒度控制到了按钮级别的权限控制</li>
-<li>用户登录成功，获取权限信息，存入session，</li>
-<li>每次请求在中间件中做权限校验，中间件中获取用户请求的url，以及当前用户所拥有的所有权限，然后进行比较，</li>
-<li>使用inclusion_tag实现动态菜单</li>
-</ul>
-</li>
-<li>为什么要把权限存入session</li>
-<li>静态文件和模块文件</li>
-<li>相关技术点<ul>
-<li>orm查询  –去空，–去重</li>
-<li>中间件 （用户登录白名单，权限验证）</li>
-<li>inclusion_tag（自定义页面的一块内容，用的时候只需要调用）</li>
-</ul>
-</li>
-<li></li>
-</ul>
-<p><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210512115130404.png" alt="image-20210512115130404"></p>
-<h4 id="阶段问题总结（面试常问）"><a href="#阶段问题总结（面试常问）" class="headerlink" title="阶段问题总结（面试常问）"></a>阶段问题总结（面试常问）</h4><ol>
-<li>简述权限流程有<ul>
-<li>粒度控制到了按钮级别的权限控制</li>
-<li>用户登录成功，获取权限信息，存入session，</li>
-<li>每次请求，在中间件中做权限校验，</li>
-<li>使用inclusion_tag实现动态菜单</li>
-</ul>
-</li>
-<li>如何实现控制到按钮的<ul>
-<li>用户登录时，用户所拥有的权限，别名==django路由的name构造成了一个字典；（字典快）</li>
-<li>在页面中写了一个django模板的filter来进行判断是否显示</li>
-</ul>
-</li>
-<li>为什么要使用中间件<ul>
-<li>所有请求在达到视图函数之前，必须经过中间件，所有在中间件中对请求做处理比较简单</li>
-</ul>
-</li>
-<li>模板中的特殊方法：inclusion_tag、simpletag、filter</li>
-<li>权限中使用了几张表<ul>
-<li>六张  用户、角色、用户角色、权限、角色权限、菜单</li>
-</ul>
-</li>
-<li>表中的字段（背表）</li>
-<li>写流程（思维导图）</li>
+<h5 id="页面缓存"><a href="#页面缓存" class="headerlink" title="页面缓存"></a>页面缓存</h5><ol>
+<li>页面缓存是将应用生成的页面缓存起来，这样就不需要每次都生成页面了，从而可以节省大量的CPU资源，如果将缓存的页面放到内存中速度就更快了。如果使用Nginx服务器就可以使用它自带的缓存功能，当然也可以使用专门的Squid 服务器。页面缓存的默认失效机制一班都是按缓存时间处理的，当然也可以在修改数据之后手动让相应的缓存失效。</li>
 </ol>
-<p>特殊字典的构造</p>
-<ul>
-<li><pre class=" language-python"><code class="language-python">权限 <span class="token operator">=</span> <span class="token punctuation">{</span>
-    权限别名：    <span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'url'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'pid'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'url'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'pid'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span><span class="token string">"id"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">"title"</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'url'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'pid'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<h5 id="集群与分布式"><a href="#集群与分布式" class="headerlink" title="集群与分布式"></a>集群与分布式</h5><ol>
+<li>集群是每台服务器都具有相同的功能，处理请求时调用那台服务器都可以，主要起分流作用。</li>
+<li>分布式是将不同的业务放到不同的服务器中，处理一个请求可能需要用到多台服务器，这样就可以提高一个请求的处理速度，而且集群和分布式也可以同时使用。</li>
+<li>集群有两个方式：一种是在静态资源集群。另一种是应用程序集群。静态资源集群比较简单。应用程序集群在处理过程中最核心的问题就是Session 同步问题。</li>
+<li>’Session 同步有两种处理方式：一种是在Session 发生变化后自动同步到其他服务器，另一种就是用个程序统一管理Session。所有集群的服务器都使用同一个Session，Tomcat 默认使用就是第一种方式，通过简单的配置就可以实现，第二种方式可以使用专门的服务器安装Mencached等高效的缓存程序统一来管理session，然后再应用程序中通过重写Request并覆盖getSession 方法来获取制定服务器中的Session。</li>
+<li>对于集群来说还有一个核心的问题就是负载均衡，也就是接收到一个请求后具体分配到那个服务器去处理的问题，这个问题可以通过软件处理也可以使用专门的硬件（如：F5）解决。</li>
+</ol>
+<h5 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h5><ol>
+<li><p>反向代理指的是客户端直接访问的服务器并不真正提供服务，它从别的服务器获取资源然后将结果返回给用户</p>
+<h6 id="反向代理服务器和代理服务器的区别"><a href="#反向代理服务器和代理服务器的区别" class="headerlink" title="反向代理服务器和代理服务器的区别"></a>反向代理服务器和代理服务器的区别</h6><p>反向代理是服务器自动调用别的服务器返回给我们结果，我们并不知道</p>
+<p>代理服务器是我们主动去访问代理服务器从而让他返回给我们访问不了的内容</p>
 </li>
-<li><pre class=" language-python"><code class="language-python">    菜单 <span class="token operator">=</span> <span class="token punctuation">{</span>
-        菜单ID：<span class="token punctuation">{</span>
-            title<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-            icon<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-            children<span class="token punctuation">:</span><span class="token punctuation">[</span>
-                <span class="token punctuation">{</span>id<span class="token punctuation">:</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
-            <span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-</li>
-<li></li>
-</ul>
+</ol>
+<h5 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h5><ol>
+<li>cdn其实是一种特殊的集群页面缓存服务器，他和普通集群的多台页面缓存服务器相比，主要是它存放的位置和分配请求的方式有点特殊。CDN 服务器是分布在全国各地的，当接收到用户请求后会将请求分配到最合适的CDN服务器节点获取数据。比如联通的用户分配到联通的节点，上海的用户分配到上海的节点。</li>
+</ol>
+<h5 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h5><ol>
+<li>数据库表结构涉及</li>
+<li>数据类型的选用</li>
+<li>sql优化</li>
+<li>索引优化</li>
+<li>配置优化</li>
+</ol>
+<h5 id="底层优化"><a href="#底层优化" class="headerlink" title="底层优化"></a>底层优化</h5><ol>
+<li>前面所说的都是架构都是建立在最前面介绍的基础结构上，很多地方都需要通过网络传输，如果可以加快网络传输的速度，那将会让整个系统得到改善</li>
+</ol>
 
                 
             </div>
@@ -745,7 +561,7 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://skxgood03.github.io/2021/06308.html">https://skxgood03.github.io/2021/06308.html</a>
+                    <a href="https://skxgood03.github.io/2021/07254.html">https://skxgood03.github.io/2021/07254.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -783,8 +599,8 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CRM/">
-                                    <span class="chip bg-color">CRM</span>
+                                <a href="/tags/DRF/">
+                                    <span class="chip bg-color">DRF</span>
                                 </a>
                             
                         </div>
@@ -1232,17 +1048,18 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06309.html">
+                <a href="/2021/07254.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="stark组件">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="模型类序列化器">
                         
-                        <span class="card-title">stark组件</span>
+                        <span class="card-title">模型类序列化器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1252,9 +1069,9 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1267,11 +1084,12 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CRM/">
-                        <span class="chip bg-color">CRM</span>
+                    <a href="/tags/DRF/">
+                        <span class="chip bg-color">DRF</span>
                     </a>
                     
                 </div>
@@ -1285,13 +1103,13 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06307.html">
+                <a href="/2021/07240.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.png" class="responsive-img" alt="Vuejs组件">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Vuejs组件</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1302,27 +1120,15 @@ VALID_URL <span class="token operator">=</span> <span class="token punctuation">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Kexuan Shi
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Vuejs%E7%BB%84%E4%BB%B6/">
-                        <span class="chip bg-color">Vuejs组件</span>
-                    </a>
-                    
                 </div>
                 
             </div>

@@ -4,6 +4,98 @@
   
     
     <entry>
+      <title>模型类序列化器</title>
+      <link href="/2021/07254.html"/>
+      <url>/2021/07254.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="高并发的解决方案"><a href="#高并发的解决方案" class="headerlink" title="高并发的解决方案"></a>高并发的解决方案</h4><h5 id="应用和静态分离"><a href="#应用和静态分离" class="headerlink" title="应用和静态分离"></a>应用和静态分离</h5><ol><li><p>应用和静态分离，将应用和静态文件放在不同的服务器上面，因为静态文件没有状态分离比较简单通过不同的域名让服务器直接访问资源服务器而不需要在访问应用的服务器</p><p><a href="https://imgtu.com/i/WgIJfO"><img src="https://z3.ax1x.com/2021/07/25/WgIJfO.png" alt="WgIJfO.png"></a></p></li></ol><h5 id="页面缓存"><a href="#页面缓存" class="headerlink" title="页面缓存"></a>页面缓存</h5><ol><li>页面缓存是将应用生成的页面缓存起来，这样就不需要每次都生成页面了，从而可以节省大量的CPU资源，如果将缓存的页面放到内存中速度就更快了。如果使用Nginx服务器就可以使用它自带的缓存功能，当然也可以使用专门的Squid 服务器。页面缓存的默认失效机制一班都是按缓存时间处理的，当然也可以在修改数据之后手动让相应的缓存失效。</li></ol><h5 id="集群与分布式"><a href="#集群与分布式" class="headerlink" title="集群与分布式"></a>集群与分布式</h5><ol><li>集群是每台服务器都具有相同的功能，处理请求时调用那台服务器都可以，主要起分流作用。</li><li>分布式是将不同的业务放到不同的服务器中，处理一个请求可能需要用到多台服务器，这样就可以提高一个请求的处理速度，而且集群和分布式也可以同时使用。</li><li>集群有两个方式：一种是在静态资源集群。另一种是应用程序集群。静态资源集群比较简单。应用程序集群在处理过程中最核心的问题就是Session 同步问题。</li><li>’Session 同步有两种处理方式：一种是在Session 发生变化后自动同步到其他服务器，另一种就是用个程序统一管理Session。所有集群的服务器都使用同一个Session，Tomcat 默认使用就是第一种方式，通过简单的配置就可以实现，第二种方式可以使用专门的服务器安装Mencached等高效的缓存程序统一来管理session，然后再应用程序中通过重写Request并覆盖getSession 方法来获取制定服务器中的Session。</li><li>对于集群来说还有一个核心的问题就是负载均衡，也就是接收到一个请求后具体分配到那个服务器去处理的问题，这个问题可以通过软件处理也可以使用专门的硬件（如：F5）解决。</li></ol><h5 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h5><ol><li><p>反向代理指的是客户端直接访问的服务器并不真正提供服务，它从别的服务器获取资源然后将结果返回给用户</p><h6 id="反向代理服务器和代理服务器的区别"><a href="#反向代理服务器和代理服务器的区别" class="headerlink" title="反向代理服务器和代理服务器的区别"></a>反向代理服务器和代理服务器的区别</h6><p>反向代理是服务器自动调用别的服务器返回给我们结果，我们并不知道</p><p>代理服务器是我们主动去访问代理服务器从而让他返回给我们访问不了的内容</p></li></ol><h5 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h5><ol><li>cdn其实是一种特殊的集群页面缓存服务器，他和普通集群的多台页面缓存服务器相比，主要是它存放的位置和分配请求的方式有点特殊。CDN 服务器是分布在全国各地的，当接收到用户请求后会将请求分配到最合适的CDN服务器节点获取数据。比如联通的用户分配到联通的节点，上海的用户分配到上海的节点。</li></ol><h5 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h5><ol><li>数据库表结构涉及</li><li>数据类型的选用</li><li>sql优化</li><li>索引优化</li><li>配置优化</li></ol><h5 id="底层优化"><a href="#底层优化" class="headerlink" title="底层优化"></a>底层优化</h5><ol><li>前面所说的都是架构都是建立在最前面介绍的基础结构上，很多地方都需要通过网络传输，如果可以加快网络传输的速度，那将会让整个系统得到改善</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DRF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2021/07240.html"/>
+      <url>/2021/07240.html</url>
+      
+        <content type="html"><![CDATA[<pre class=" language-python"><code class="language-python">session<span class="token punctuation">[</span><span class="token string">'xxx'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">123</span><span class="token comment" spellcheck="true">#只要出现这种语法，内部绝对执行 __setitem__ 方法</span></code></pre><p>简易执行流程</p><img src="http://pic.ihcnb.cn/iHcnb/b08851037ecfd.png" alt="1627093507956.png"><p>最后走到save_session将ctx中的session写入cookie中</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于实现局域网访问flask项目</title>
+      <link href="/2021/07131.html"/>
+      <url>/2021/07131.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><h3 id="关于实现局域网访问flask项目"><a href="#关于实现局域网访问flask项目" class="headerlink" title="关于实现局域网访问flask项目"></a>关于实现局域网访问flask项目</h3><p>局域网访问：</p><p>打开pycharm  </p><ul><li><p><img src="http://pic.ihcnb.cn/iHcnb/a0652e5cbbf95.png" alt="1626188665947.png"></p><p><img src="http://pic.ihcnb.cn/iHcnb/abc26a9eda637.png" alt="WRMS1COXWLF0CHR9J1L39YJ.png"></p><p>修改如图</p><p>点击apply，重新运行，出现下面这种说明成功</p><p>![~KC9BF_M_WB3_@_21H`MTGD.png](<a href="http://pic.ihcnb.cn/iHcnb/db9651d49e301.png">http://pic.ihcnb.cn/iHcnb/db9651d49e301.png</a>)</p><p>win+r打开cmd</p><p><img src="/2021/Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210713230731428.png" alt="image-20210713230731428"></p></li></ul><p>进入输入ipconfig</p><p>查看当前电脑ipv4（一般最后一类）</p><ul><li><p><img src="http://pic.ihcnb.cn/iHcnb/1915e5585690c.png" alt="1626188954353.png"></p><p>复制IP地址</p><p>打开浏览器，把0.0.0.0:8000,替换成ip地址：8000</p><p>*注：不同网络下ip地址都不一样，最好运行前看看是否有变化</p><h4 id="如果本地运行"><a href="#如果本地运行" class="headerlink" title="如果本地运行"></a>如果本地运行</h4><p>步骤同前两张图片一样，删除    ```-h 0.0.0.0……..``</p><p>重新运行项目：待出现</p><p><img src="http://pic.ihcnb.cn/iHcnb/28699fc3cd736.png" alt="1626189295895.png"></p><p>则说明本地运行成功，其他人无法访问</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python框架 </tag>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python web框架对比</title>
+      <link href="/2021/071243123.html"/>
+      <url>/2021/071243123.html</url>
+      
+        <content type="html"><![CDATA[<h6 id="谈谈对python-web框架："><a href="#谈谈对python-web框架：" class="headerlink" title="谈谈对python web框架："></a>谈谈对python web框架：</h6><ul><li>-django，大而全，内部提供：ORM，Admin，中间件，Form、ModelForm、session.、缓存、信号、csrf；</li><li>flask：短小精悍、可扩展性强、第三方组件丰富。</li><li>tornado：短小精悍+异步非阻塞</li><li></li></ul><h6 id="谈谈对面向对象的理解"><a href="#谈谈对面向对象的理解" class="headerlink" title="谈谈对面向对象的理解"></a>谈谈对面向对象的理解</h6><ul><li>封装：<ul><li>将同一方法分为一类：方法封装到类中</li><li>将方法中共同的参数封装到对象中：把公用值封装到对象中。</li><li><img src="http://pic.ihcnb.cn/iHcnb/a6b94ab8398bb.png" alt="1626942837792.png"></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python基础 </tag>
+            
+            <tag> web框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>列表排序</title>
       <link href="/2021/07081.html"/>
       <url>/2021/07081.html</url>
