@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
 
@@ -467,14 +467,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-08-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    281
+                    540
                 </div>
                 
 
@@ -501,7 +501,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
+                <h4 id="路比三人组"><a href="#路比三人组" class="headerlink" title="路比三人组"></a>路比三人组</h4><h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
 <li><p>列表相邻的两个数，如果前面比后面大，交换这两个数</p>
 </li>
 <li><p>一趟排序完成后，无序列表区减一，有序列表区加一</p>
@@ -512,7 +512,7 @@
     <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         exchange <span class="token operator">=</span> <span class="token boolean">False</span>  <span class="token comment" spellcheck="true">#优化：减少排序次数</span>
         <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span>i<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
                 li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>li<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
                 exchange <span class="token operator">=</span> <span class="token boolean">True</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 每一次拍完序打印</span>
@@ -545,7 +545,53 @@ li <span class="token operator">=</span> <span class="token punctuation">[</span
 select_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
 </code></pre>
 </li>
-<li></li>
+</ul>
+<h5 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h5><ul>
+<li><p>时间复杂度：O(n^2)</p>
+</li>
+<li><p>摸牌规则，摸到一张牌和手上的牌比对，大的放后面，小的放前面</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">insert_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#i 表示摸到的牌的下标</span>
+        tmp <span class="token operator">=</span> li<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>  <span class="token comment" spellcheck="true"># j指手里牌的下标</span>
+        <span class="token keyword">while</span> j <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">and</span> tmp <span class="token operator">&lt;</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            li<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            j <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
+        li<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> tmp
+        <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+
+li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+insert_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="牛逼三人组"><a href="#牛逼三人组" class="headerlink" title="牛逼三人组"></a>牛逼三人组</h4><h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
+<li><p>时间复杂度：O(nlogn)</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tmp <span class="token operator">=</span> li<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+    <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+        <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right <span class="token operator">and</span> li<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> tmp<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#从右边找比tmp小的数</span>
+            right <span class="token operator">-=</span><span class="token number">1</span> <span class="token comment" spellcheck="true">#往左走一步</span>
+        li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> li<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#把右边的值写到左边空位</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token operator">and</span> li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> tmp<span class="token punctuation">:</span>
+            left <span class="token operator">+=</span><span class="token number">1</span>
+        li<span class="token punctuation">[</span>right<span class="token punctuation">]</span>  <span class="token operator">=</span> li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#把左边的值写到右边的空位上</span>
+    li<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> tmp
+    <span class="token keyword">return</span> left
+
+<span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#至少有两个元素</span>
+        mid <span class="token operator">=</span> partition<span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>left<span class="token punctuation">,</span>mid<span class="token number">-1</span><span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
+quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+</code></pre>
+</li>
 </ul>
 
                 
@@ -1340,7 +1386,7 @@ select_sort<span class="token punctuation">(</span>li<span class="token punctuat
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13k</span>
+                        class="white-color">22k</span>
             
             
             
