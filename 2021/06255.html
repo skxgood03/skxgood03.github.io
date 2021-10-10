@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ss">
+    <meta name="keywords" content="flask_session, ss">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CodKx&#39;Bg</title>
+    <title>flask_session | CodKx&#39;Bg</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/bitbug_favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">flask_session</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flask/">
+                                <span class="chip bg-color">Flask</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-21
+                    2021-06-25
                 </div>
                 
 
@@ -461,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    237
+                    16
                 </div>
                 
 
@@ -488,70 +501,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>abbrlink: 31508<br>title: sqlalchemy，ORM框架<br>tags: Flask<br>categories: python</p>
-<p>sqlalchemy，ORM框架</p>
-<p>什么是orm框架：对象关系映射</p>
-<p>​                                类  —–&gt;表</p>
-<p>​                                对象 —–&gt; 记录（一行数据）</p>
-<p>问题：</p>
-<p>​        db first：根据数据库表，生成类</p>
-<p>​                            django</p>
-<p>​                                    python manage.py inspectdb</p>
-<p>​        code first：根据类创建数据库表</p>
-<p>​                            django</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ##################### 一对多示例 #########################</span>
-<span class="token keyword">class</span> <span class="token class-name">Hobby</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    __tablename__ <span class="token operator">=</span> <span class="token string">'hobby'</span>
-    id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    caption <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token string">'篮球'</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    __tablename__ <span class="token operator">=</span> <span class="token string">'person'</span>
-    nid <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> nullable<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    hobby_id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> ForeignKey<span class="token punctuation">(</span><span class="token string">"hobby.id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true"># 与生成表结构无关，仅用于查询方便</span>
-    hobby <span class="token operator">=</span> relationship<span class="token punctuation">(</span><span class="token string">"Hobby"</span><span class="token punctuation">,</span> backref<span class="token operator">=</span><span class="token string">'pers'</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># ##################### 多对多示例 #########################</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Server2Group</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    __tablename__ <span class="token operator">=</span> <span class="token string">'server2group'</span>
-    id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> autoincrement<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    server_id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> ForeignKey<span class="token punctuation">(</span><span class="token string">'server.id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    group_id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> ForeignKey<span class="token punctuation">(</span><span class="token string">'group.id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">class</span> <span class="token class-name">Group</span><span class="token punctuation">(</span>Base<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    __tablename__ <span class="token operator">=</span> <span class="token string">'group'</span>
-    id <span class="token operator">=</span> Column<span class="token punctuation">(</span>Integer<span class="token punctuation">,</span> primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    name <span class="token operator">=</span> Column<span class="token punctuation">(</span>String<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span> unique<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> nullable<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-
-    <span class="token comment" spellcheck="true"># 与生成表结构无关，仅用于查询方便</span>
-    servers <span class="token operator">=</span> relationship<span class="token punctuation">(</span><span class="token string">'Server'</span><span class="token punctuation">,</span> secondary<span class="token operator">=</span><span class="token string">'server2group'</span><span class="token punctuation">,</span> backref<span class="token operator">=</span><span class="token string">'groups'</span><span class="token punctuation">)</span>
-</code></pre>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用relationship正向查询</span>
-<span class="token triple-quoted-string string">"""
-v = session.query(Group).first()
-print(v.name)
-print(v.servers)
-"""</span>
-
-<span class="token comment" spellcheck="true"># 使用relationship反向查询</span>
-<span class="token triple-quoted-string string">"""
-v = session.query(Server).first()
-print(v.hostname)
-print(v.groups)
-"""</span>
-</code></pre>
-<p><img src="http://pic.ihcnb.cn/iHcnb/2be574a7dadae.png" alt="1629701466214.png"></p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/487d5f0def0c8.png" alt="1629701401583.png"></p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/11894d403ac77.png" alt="1629701362801.png"></p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/16e92f8365de8.png" alt="1629701487362.png"></p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/badad89d9111b.png" alt="1629772061752.png"></p>
+                <h5 id="flask-session"><a href="#flask-session" class="headerlink" title="flask_session"></a>flask_session</h5><p><img src="http://pic.ihcnb.cn/iHcnb/8c588a4aa2d48.png" alt="1628764949787.png"></p>
+<p>注：导入方法已弃用，应改为<code>from flask_session import Session</code></p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/55466a26fe8cf.png" alt="1628767279367.png"></p>
 
                 
             </div>
@@ -578,7 +530,7 @@ print(v.groups)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://skxgood03.github.io/2021/08210.html">https://skxgood03.github.io/2021/08210.html</a>
+                    <a href="https://skxgood03.github.io/2021/06255.html">https://skxgood03.github.io/2021/06255.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,7 +567,11 @@ print(v.groups)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Flask/">
+                                    <span class="chip bg-color">Flask</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1065,13 +1021,13 @@ print(v.groups)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08216.html">
+                <a href="/2021/06284.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="flask面试">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">flask面试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1082,15 +1038,27 @@ print(v.groups)
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-28
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kexuan Shi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flask/">
+                        <span class="chip bg-color">Flask</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1099,16 +1067,16 @@ print(v.groups)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/08192.html">
+                <a href="/2021/06255.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/23.png" class="responsive-img" alt="flask_session">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">flask_session</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1119,15 +1087,28 @@ print(v.groups)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kexuan Shi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flask/">
+                        <span class="chip bg-color">Flask</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1313,7 +1294,7 @@ print(v.groups)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">22k</span>
+                        class="white-color">21.8k</span>
             
             
             

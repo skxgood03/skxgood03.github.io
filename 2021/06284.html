@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ss">
+    <meta name="keywords" content="flask面试, ss">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CodKx&#39;Bg</title>
+    <title>flask面试 | CodKx&#39;Bg</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/bitbug_favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">flask面试</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flask/">
+                                <span class="chip bg-color">Flask</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-09
+                    2021-06-28
                 </div>
                 
 
@@ -461,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    93
+                    1.2k
                 </div>
                 
 
@@ -488,14 +501,176 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>abbrlink: 10<br>date: 2021-6-29<br>title: flask源码解析<br>tags: Flask<br>categories: python</p>
-<p>threading.local对象，用于为每个线程开辟一块空间来保存它独有的值</p>
-<h6 id="在源码中分析上下文管理"><a href="#在源码中分析上下文管理" class="headerlink" title="在源码中分析上下文管理"></a>在源码中分析上下文管理</h6><p>​    第一阶段：将ctx（request，session）放到Local对象</p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/51a87aa487836.png" alt=" "></p>
-<p>​    第二阶段：视图函数导入：request\session<br><img src="http://pic.ihcnb.cn/iHcnb/39fedcaaafdb0.png" alt="1628520008500.png"></p>
-<p>​    第三阶段：请求完成<br>​                            获取到session并保存到cookie</p>
-<p>​                            将ctx删除</p>
-<p><img src="http://pic.ihcnb.cn/iHcnb/83d023f7df98a.png" alt="1628578173149.png"></p>
+                <h5 id="flask里面的request，session是什么时候创建的？是什么时候销毁的"><a href="#flask里面的request，session是什么时候创建的？是什么时候销毁的" class="headerlink" title="flask里面的request，session是什么时候创建的？是什么时候销毁的"></a>flask里面的request，session是什么时候创建的？是什么时候销毁的</h5><p>当请求刚进来的时候回将他两个封装成requestContext()对象，封装之后通过localstack放入local对象中，ctx的session是空的，下一步执行open_session，把cookie重新赋值到ctx里面去，最后返回执行save_session将ctx的session做修改，最后移除save_session</p>
+<p><img src="http://pic.ihcnb.cn/iHcnb/51a87aa487836.png" alt="1628503605249.png"></p>
+<p>flask中有几个local对象：永远只有两个</p>
+<p>自己写一个类+列表的技术栈</p>
+<p>技术栈应用：flask里面的LocalStack就是基于栈实现的</p>
+<h5 id="Python基础部分那些比较重要？"><a href="#Python基础部分那些比较重要？" class="headerlink" title="Python基础部分那些比较重要？"></a>Python基础部分那些比较重要？</h5><ul>
+<li>反射<ul>
+<li>cbv</li>
+<li>django配置文件</li>
+<li>wtform中</li>
+</ul>
+</li>
+<li>装饰器<ul>
+<li>flask路由\装饰器</li>
+<li>认证</li>
+<li>csrf</li>
+</ul>
+</li>
+<li>生成器、迭代器</li>
+<li>面向对象<ul>
+<li>封装继承多态（简单，一两句概括）</li>
+<li>特殊功能<ul>
+<li>双下划线方法<ul>
+<li><code>__mro__</code>:找到当前类，寻找属性的顺序</li>
+<li><code>__dict__</code>:执行dict、是拿里面的全部</li>
+<li><code>__new__</code>:实例化但没有给当前类对象</li>
+<li><code>__call__</code>:flask请求入口</li>
+<li><code>__iter__</code>:循环所有字段</li>
+</ul>
+</li>
+<li>metaclass：指定类由那个类创建，默认type<ul>
+<li>场景：在类创建之前定制操作</li>
+<li>示例：wtform中，对字段进行排序</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="为什么要学python？"><a href="#为什么要学python？" class="headerlink" title="为什么要学python？"></a>为什么要学python？</h6><ul>
+<li>学长建议</li>
+<li>自己了解：<ul>
+<li>简单易学，生态圈强大（不局限应用面），发展趋势好（人工智能，数据分析）</li>
+</ul>
+</li>
+</ul>
+<h6 id="谈谈你对python和其他语言的区别？"><a href="#谈谈你对python和其他语言的区别？" class="headerlink" title="谈谈你对python和其他语言的区别？"></a>谈谈你对python和其他语言的区别？</h6><ul>
+<li>解释性<ul>
+<li>python/php</li>
+</ul>
+</li>
+<li>编译型<ul>
+<li>java/c#</li>
+</ul>
+</li>
+<li>Python弱类型</li>
+</ul>
+<h6 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h6><ul>
+<li><p>字符串、列表、元组、字典每个常用的5个方法？</p>
+<ol>
+<li>字符串：<ol>
+<li><em>1，find通过元素找索引，可切片，找不到返回-1</em></li>
+<li><em>2，index，找不到报错。</em></li>
+<li>*3，split 由字符串分割成列表，默认按空格。</li>
+<li><em>4，captalize 首字母大写，其他字母小写。</em></li>
+<li><em>，upper 全大写。</em></li>
+<li><em>，lower 全小写。</em></li>
+<li><em>title，每个单词的首字母大写。</em></li>
+<li><em>startswith 判断以什么为开头，可以切片，整体概念。</em></li>
+<li><em>endswith 判断以什么为结尾，可以切片，整体概念。</em></li>
+<li><em>format格式化输出</em></li>
+</ol>
+</li>
+<li><em>字典：</em><ol>
+<li>key： 输出所有的键<br>clear：清空<br>dic：删除的键如果没有则报错<br>pop：键值对删，有返回，没有原来的键会报错（自行设置返回键就不会报错）<br>popitem：随机删键值对<br>del：删除的键如果没有则报错<br>改 update</li>
+</ol>
+</li>
+<li>列表：<ol>
+<li>append：在后面添加。<br>Insert按照索引添加，<br>expend：迭代着添加。<br>list.extend(seq) - 在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）<br>pop 删除 (pop 有返回值)<br>remove 可以按照元素去删<br>clear 清空列表</li>
+</ol>
+</li>
+<li>元组<ol>
+<li>1、cmp(tuple1, tuple2)：比较两个元组元素。<br>2、len(tuple)：计算元组元素个数。<br>3、max(tuple)：返回元组中元素最大值。<br>4、min(tuple)：返回元组中元素最小值。<br>5、tuple(seq)：将列表转换为元组。、</li>
+</ol>
+</li>
+</ol>
+<h5 id="函数-必问"><a href="#函数-必问" class="headerlink" title="函数(必问)"></a>函数(必问)</h5></li>
+<li><p>函数参数传递的是什么？ ——————引用</p>
+</li>
+<li><p><code>def func(a,b=[]):pass</code></p>
+<ul>
+<li>函数的第二个默认参数是一个list，当第一次执行的时候实例化了一个list，第三次执行还是用第一次执行的时候实例化的地址存储，所以第一和第三次执行的结果就是相同的，想每次执行只输出当前传入参数 ，默认参数应该设置为None。</li>
+</ul>
+</li>
+<li><p>lambda 表达式</p>
+</li>
+<li><p>列表生成式    [i for i in range(1)]</p>
+</li>
+<li><p>生成器表达式 （for i in range(1)）</p>
+</li>
+</ul>
+<h5 id="迭代器、生成器、装饰器、可迭代对象（必问）"><a href="#迭代器、生成器、装饰器、可迭代对象（必问）" class="headerlink" title="迭代器、生成器、装饰器、可迭代对象（必问）"></a>迭代器、生成器、装饰器、可迭代对象（必问）</h5><ul>
+<li><p>迭代器：内部实现<code>__next__</code>方法，帮助我们向后一个一个取值。一步一步往前迭代，到相应位置停止，for循环底层依赖迭代器</p>
+</li>
+<li><p>生成器：一个函数内部存在yield关键字；v = 函数（）,v是生成器，不会一次创建，而是一次一次创建</p>
+<ul>
+<li>一种特殊的迭代器，底层依赖迭代器</li>
+<li>应用场景：range、xrange<ul>
+<li>py2：range(1000)立即创建;xrange(1000)生成器</li>
+<li>py3：range(1000)生成器</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>可迭代对象：内部实现<code>__iter__</code>方法且返回一个迭代器</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Xx</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> iter<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+obj <span class="token operator">=</span> Xx<span class="token punctuation">(</span><span class="token punctuation">)</span>        
+</code></pre>
+<ul>
+<li>应用场景：<ul>
+<li>wtform中对form对象进行循环时，显示里面的所有字段</li>
+<li>列表，元组、字典</li>
+<li>总结：如果想要让一个对象可以被for循环，那么就需要在当前类中定义<code>__iter__</code>方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>装饰器：在不改变原函数的代码的基础上，在执行前后进行定制操作</p>
+<ul>
+<li><p>手写：</p>
+</li>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">wapper</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> inner
+
+@wapper
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> s<span class="token operator">+</span><span class="token number">100</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>index<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>应用场景：</p>
+<ul>
+<li>flask路由系统</li>
+<li>flask before_request</li>
+<li>csrf</li>
+<li>django内置认证</li>
+<li>django缓存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="方法函数区别"><a href="#方法函数区别" class="headerlink" title="方法函数区别"></a>方法函数区别</h6><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">fench</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    
+    
+    
+Foo<span class="token punctuation">.</span>fench<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#函数</span>
+
+obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#实例化</span>
+obj<span class="token punctuation">.</span>fench<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#方法</span>
+</code></pre>
+<h6 id="通过类直接调用的是函数"><a href="#通过类直接调用的是函数" class="headerlink" title="通过类直接调用的是函数"></a>通过类直接调用的是函数</h6><h6 id="通过实例化对象调用的是方法"><a href="#通过实例化对象调用的是方法" class="headerlink" title="通过实例化对象调用的是方法"></a>通过实例化对象调用的是方法</h6><p>对于一个类里面的东西到底是函数还是方法取决于谁调用</p>
 
                 
             </div>
@@ -522,7 +697,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://skxgood03.github.io/2021/08093.html">https://skxgood03.github.io/2021/08093.html</a>
+                    <a href="https://skxgood03.github.io/2021/06284.html">https://skxgood03.github.io/2021/06284.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,7 +734,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Flask/">
+                                    <span class="chip bg-color">Flask</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1009,13 +1188,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08094.html">
+                <a href="/2021/06293.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/13.png" class="responsive-img" alt="flask源码解析">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">flask源码解析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1026,15 +1205,27 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kexuan Shi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flask/">
+                        <span class="chip bg-color">Flask</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1046,13 +1237,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/080814.html">
+                <a href="/2021/06255.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/23.png" class="responsive-img" alt="flask_session">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">flask_session</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1063,15 +1254,27 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Kexuan Shi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flask/">
+                        <span class="chip bg-color">Flask</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1257,7 +1460,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">22k</span>
+                        class="white-color">21.8k</span>
             
             
             
